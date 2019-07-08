@@ -174,7 +174,7 @@ Image to analyze:
       // **********************************************
 
       // Replace <Subscription Key> with your valid subscription key.
-      var subscriptionKey = "b29cfa1e4429453d9deb6ecc525f42e0";
+      var subscriptionKey = "94e1ddddbb3e439ba95d5094ef847bdc";
 
       // You must use the same Azure region in your REST API method as you used to
       // get your subscription keys. For example, if you got your subscription keys
@@ -185,7 +185,7 @@ Image to analyze:
       // If you use a free trial subscription key, you shouldn't need to change
       // this region.
       var uriBase =
-          "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
+          "https://dicoodingfinalcvsamsul.cognitiveservices.azure.com/vision/v2.0/analyze";
 
       // Request parameters.
       var params = {
