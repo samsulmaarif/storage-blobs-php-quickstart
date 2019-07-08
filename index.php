@@ -7,7 +7,8 @@ use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=rahmatmacdstorage;AccountKey=P/70SyFmLWI6yUcxjLGiaIODQqiV8dmWT960y37EK9U+BRV0GPDDGGp0mqbR3VEKKYbNYQLFRW2XGFHCecOciQ==";
+//$connectionString = "DefaultEndpointsProtocol=https;AccountName=rahmatmacdstorage;AccountKey=P/70SyFmLWI6yUcxjLGiaIODQqiV8dmWT960y37EK9U+BRV0GPDDGGp0mqbR3VEKKYbNYQLFRW2XGFHCecOciQ==";
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=dicodingsamsul;AccountKey=o1STvtAc/3j1gqKOBfTRw/tR9C+2/0/b/DI9uJRuwacKWJKHJXgG1BsuPuYHdLXS3beqURTqLsCtrd81NK3uzg==;EndpointSuffix=core.windows.net";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $fileToUpload = null;
@@ -119,17 +120,24 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
     <title>Analyze Sample</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
- 
+
+<div class="container">
+
 <h1>Analyze image:</h1>
 Upload Image
-<form action="" enctype="multipart/form-data" id="formUpload" method="POST">
-	<input type="file" name="image" id="image"/>
-	<button type="submit" id="submit">Upload</button>
+<form class="form-inline" action="" enctype="multipart/form-data" id="formUpload" method="POST">
+<div class="form-group">
+	<input class="form-control" type="file" name="image" id="image"/>
+	<button class="btn btn-primary" type="submit" id="submit">Upload</button>
+</div>
 </form>
 <br><br>
 Enter the URL to an image, then click the <strong>Analyze image</strong> button.
@@ -140,7 +148,7 @@ if (isset($message))
 ?>
 Image to analyze:
 <input type="text" name="inputImage" id="inputImage" />
-<button onclick="processImage()">Analyze Image</button>
+<button class="btn btn-primary" onclick="processImage()">Analyze Image</button>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
         Response:
@@ -154,6 +162,8 @@ Image to analyze:
         <img id="sourceImage" width="400" />
         <p id="captions"></p>
     </div>
+</div>
+
 </div>
 
 <script>
